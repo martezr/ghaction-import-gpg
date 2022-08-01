@@ -6,10 +6,6 @@ runs:
   steps:
     - id: set-default-cache-ttl
       run: |
-        gpg-agent --daemon --default-cache-ttl 7200
-      shell: bash
-      name: set default cache ttl
-    - run: |
         #
         echo -e '${{ env.GPG_PRIVATE_KEY }}' | gpg --import --batch --no-tty
         echo "hello world" > temp.txt
